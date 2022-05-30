@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
+import Card from './Card';
+// Here is your key: 19fe2539
+// OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
 
-function App() {
+const API_URL = 'http://www.omdbapi.com/?apikey=19fe2539';
+
+
+
+const App = () => {
+    const [title, setTitle] = useState("");
+    const[ movies, setMovies] = useState([]);
+
+    const searchMovies = async (title) => {
+        const response = await fetch(`${API_URL}&s=${title}`);
+        const data = await response.json();
+        setMovies(data.Search);
+    }
+
+const handleChange = (e)=>{
+  setTitle(e.target.value);
+}
+const handleSubmit = (e)=> {
+  e.preventDefault();
+  searchMovies(title);
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <h1 className="App">Movie-search</h1>
+        <form onSubmit={handleSubmit}>
+          <input className="search-input" typeof="text" placeholder="Search..." onChange={handleChange}/>
+          <button typeof="submit">Search</button>
+        </form> 
+      </nav>
+      <section>
+        {movies.length > 0 ? <Card movies={movies}/> : <p></p>}
+      </section>
+      
+      
+    </>
+    
   );
 }
 
-export default App;
+export default App
