@@ -32,7 +32,7 @@ const handleSubmit = (e)=> {
     <div className="App">
       <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
       <section>
-        {movies.length > 0 ? <Card movies={movies}/> : <p></p>}
+        {movies.length > 0 ? <Card api={API_URL} movies={movies}/> : <p></p>}
       </section>
 
     </div>
