@@ -56,6 +56,12 @@ section{
     justify-content: center;
     margin-top: 5px;
 }
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card-container{
     
     padding: 8px;

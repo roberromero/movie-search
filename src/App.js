@@ -34,6 +34,7 @@ const handleSubmit = (e)=> {
       <section>
         {movies.length > 0 ? <Card movies={movies}/> : <p></p>}
       </section>
+
     </div>
     
   );
