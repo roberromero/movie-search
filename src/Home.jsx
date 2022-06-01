@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
-import ShowChosenMovies from "./ShowChosenMovies"
 import add from "./img/add.png";
 
-const Card = ({ movies }) => {
-  const [data, updateData] = useState([]);
-
-  const handleClick = (elem)=> {
-    updateData(oldArray=> [...oldArray, elem]);
-    console.log(data);
-  }
+const Home = ({ movies, handleClick }) => {
+ 
 
   return (
       
-    <>
+    <section>
         {movies.map(elem=> {
      return <>
               <div className="card-container" key={elem.imdbID} onClick={()=>handleClick(elem)}>
@@ -27,9 +21,9 @@ const Card = ({ movies }) => {
         })}
         {/* {<ShowChosenMovies data={data}/>} */}
        
-    </>
+    </section>
     
   )
 }
 
-export default Card
+export default Home

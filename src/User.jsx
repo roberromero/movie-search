@@ -1,10 +1,9 @@
 import React from 'react'
 
-const ShowChosenMovies = ({ data }) => {
+const User = ({ data }) => {
     console.log(data);
     return (
-        <div className='flex'>
-          
+        <section>
           {data.map(elem=>{
             return  <div className="card-container" key={elem.Title}>
                       <img className="card-container__img" src={elem.Poster} />
@@ -13,13 +12,10 @@ const ShowChosenMovies = ({ data }) => {
                         {elem.Year}
                       </div>
                     </div>
-                   
           })
           }
-        </div>
-     
+        </section>
     )
-  
 }
 
-export default ShowChosenMovies
+export default User

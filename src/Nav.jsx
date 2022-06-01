@@ -2,6 +2,7 @@ import React from 'react'
 import video from "./img/video.png";
 import home from "./img/home.png";
 import user from "./img/user.png";
+import { NavLink } from 'react-router-dom';
 const Nav = ({handleSubmit, handleChange}) => {
  return(
     <nav>
@@ -14,8 +15,8 @@ const Nav = ({handleSubmit, handleChange}) => {
             <button typeof="submit">Search</button>
         </form>
         <div className='container-icons'>
-            <a><img src={home} className='nav-home'/></a>
-            <a><img src={user} className='nav-user'/></a>
+            <NavLink to="/"> <img src={home} className='nav-home'/> </NavLink>
+            <NavLink to='/user'><img src={user} className='nav-user'/></NavLink>
         </div>
     </nav>
  );
