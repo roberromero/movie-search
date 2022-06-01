@@ -1,7 +1,10 @@
+import React, { Component }  from 'react';
 import { useState } from "react";
 import './App.css';
 import Card from './Card';
 import Nav from './Nav';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
 
@@ -29,13 +32,17 @@ const handleSubmit = (e)=> {
 }
 
   return (
-    <div className="App">
-      <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
-      <section>
-        {movies.length > 0 ? <Card api={API_URL} movies={movies}/> : <p></p>}
-      </section>
 
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
+        <section>
+          {movies.length > 0 ? <Card api={API_URL} movies={movies}/> : <p></p>}
+        </section>
+
+      </div>
+    </BrowserRouter>
+    
     
   );
 }

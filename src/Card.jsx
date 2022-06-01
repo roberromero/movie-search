@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ShowChosenMovies from "./ShowChosenMovies"
+import add from "./img/add.png";
 
 const Card = ({ movies }) => {
   const [data, updateData] = useState([]);
@@ -14,14 +15,17 @@ const Card = ({ movies }) => {
     <>
         {movies.map(elem=> {
      return <>
-              <div className="card-container" key={elem.imdbID} id={elem.imdbID} onClick={()=>handleClick(elem)}>
-                  <h2 className="card-container__title">{elem.Title}</h2>
+              <div className="card-container" key={elem.imdbID} onClick={()=>handleClick(elem)}>
+                  <img className='card-container__add' src={add}/>
                   <img className="card-container__img" src={elem.Poster} />
-                  <h3 className="card-container__year">{elem.Year}</h3>
+                  <div className='card-container__info'>
+                    {elem.Title}<br/>
+                    {elem.Year}
+                  </div>
               </div>
             </>
         })}
-        {<ShowChosenMovies data={data}/>}
+        {/* {<ShowChosenMovies data={data}/>} */}
        
     </>
     

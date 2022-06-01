@@ -8,9 +8,7 @@
     background-color: rgb(18, 18, 73);
     color: rgb(200, 217, 234);
 }
-img{
-    width: 50px;
-}
+
 nav{
     padding: 10px;
     display: flex;
@@ -23,6 +21,12 @@ nav{
     padding-left: 10px;
     font-size: 23px;
 }
+.logo > img{
+    width: 50px;
+}
+.logo > img:hover{
+    animation: rotate 0.7s ease-in-out both;
+}
 form{
     padding-right: 20px;
 }
@@ -32,8 +36,31 @@ form > button{
     border-radius:8px;
     margin-left: 7px;
     cursor:pointer;
-    
+    width: 75px;
+    height: 30px;
+    font-size: 11px;
 }
+form > button:hover{
+    animation: rotate 0.7s ease-in-out both;
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+    
 .search-input{
     border-radius: 5px;
     background-color: white;
@@ -42,10 +69,23 @@ form > button{
     color: black;
     font-size: 14px;
 }
-form > button{
-    width: 75px;
-    height: 30px;
-    font-size: 11px;
+.container-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    
+}
+.nav-home, .nav-user{
+    width: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 3px;
+}
+.nav-home:hover, .nav-user:hover{
+    width: 25px;
+    cursor: pointer;
+    filter: opacity(0.4) drop-shadow(0 0 0 rgb(127, 66, 217));
+    animation: rotate 0.7s ease-in-out both;
     
 }
 section{
@@ -63,21 +103,22 @@ section{
 }
 
 .card-container{
-    
     padding: 8px;
     margin: 10px;
     position: relative;
+    transition-duration: 1s;
 }
-.card-container__title{
-    margin: 5;
+.card-container:hover{
+    transform: scale(1.12);
+    cursor: pointer;
+}
+.card-container__add{
     position: absolute;
-    background-color: rgb(127, 66, 217);
-    width: 150px;
-    text-align: center;
-    opacity: 0.6;
-    border-radius:8px;
-
+    left: -2px;
+    top: -2px;
+    width: 25px;
 }
+
 .card-container__img{
     width: 150px;
     height: 250px;
@@ -85,21 +126,20 @@ section{
     /* box-shadow: 0px 3px 6px #00000029; */
     
 }
-.card-container:hover{
-    transform: scale(1.12);
-    transition-duration: 1.2s;
-    cursor: pointer;
-}
-.card-container__year{
+.card-container__info{
+    position: absolute;
+    width: 150px;
     text-align: center;
     margin: 0;
-    position: absolute;
-    bottom: 10px;
+    bottom: 20px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
     background-color: rgb(127, 66, 217);
-    opacity: 0.6;
-    border-radius:8px;
-    width: 150px;
+    font-size: 18px;
+    border-radius: 3px;
 }
-.addOpacity{
-    opacity: 0.8;
+.card-container__info:hover{
+   opacity: .9;
+   
 }

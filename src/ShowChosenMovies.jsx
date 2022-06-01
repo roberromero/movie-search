@@ -6,11 +6,13 @@ const ShowChosenMovies = ({ data }) => {
         <div className='flex'>
           
           {data.map(elem=>{
-            return <div className="card-container" id={elem.Title} key={elem.Title}>
-                      <h2 className="card-container__title">{elem.Title}</h2>
+            return  <div className="card-container" key={elem.Title}>
                       <img className="card-container__img" src={elem.Poster} />
-                      <h3 className="card-container__year">{elem.Year}</h3>
-                   </div>
+                      <div className='card-container__info'>
+                        {elem.Title}<br/>
+                        {elem.Year}
+                      </div>
+                    </div>
                    
           })
           }
