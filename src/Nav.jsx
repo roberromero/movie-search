@@ -7,7 +7,7 @@ const Nav = ({handleSubmit, handleChange}) => {
  return(
     <nav>
         <div className="logo">
-            <img src={video} alt="video image"/>
+            <img src={video} alt="movie clapboard icon"/>
             <h1 className="logo">MOVIE SEARCH</h1>
         </div>
         <form onSubmit={handleSubmit}>
@@ -15,8 +15,8 @@ const Nav = ({handleSubmit, handleChange}) => {
             <button typeof="submit">Search</button>
         </form>
         <div className='container-icons'>
-            <NavLink to="/"> <img src={home} className='nav-home'/> </NavLink>
-            <NavLink to='/user'><img src={user} className='nav-user'/></NavLink>
+            <NavLink to="/"> <img src={home} className='nav-home' alt='home icon'/> </NavLink>
+            <NavLink to='/user'><img src={user} className='nav-user' alt='user icon'/></NavLink>
         </div>
     </nav>
  );

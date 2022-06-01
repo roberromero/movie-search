@@ -1,11 +1,11 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import { useState } from "react";
 import './App.css';
 import Home from './Home';
 import Nav from './Nav';
 import About from './About';
 import User from './User';
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
@@ -22,7 +22,6 @@ const App = () => {
         const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
         setMovies(data.Search);
-        console.log(data);
     }
 
     //Functions passed to "NAV" as props
