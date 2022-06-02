@@ -32,7 +32,7 @@ const App = () => {
       e.preventDefault();
       searchMovies(title);
     }
-  //Functions passes to "HOME" as props
+  //Functions passes to "USER" as props
   const [data, updateData] = useState([]);
 
   const handleClick = (elem)=> {
@@ -42,16 +42,12 @@ const App = () => {
   return (
 
     <BrowserRouter>
-    
-      <div className="App">
         <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
         <Routes>
           <Route path='/' element={movies.length > 0 ? <Home api={API_URL} movies={movies} handleClick={handleClick}/> : <p></p>}/>
           <Route path="/about" element= { <About /> } />
           <Route path='/user' element= { <User data={data}/>}/>
         </Routes>
-        
-      </div>
     </BrowserRouter>
     
     
