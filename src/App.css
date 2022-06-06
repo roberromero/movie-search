@@ -88,6 +88,8 @@ form > button:hover{
     animation: rotate 0.7s ease-in-out both;
     
 }
+
+
 section{
     display: flex;
     flex-wrap: wrap;
@@ -121,12 +123,15 @@ section{
     background-color: rgb(127, 66, 217);
     opacity: .6;
 }
+.card-container__add:hover{
+    background-color: rgb(100, 0, 250);
+    border: 2px solid rgb(255, 255, 255);
+}
 
 .card-container__img{
     width: 150px;
     height: 250px;
     border-radius: 8px;
-    /* box-shadow: 0px 3px 6px #00000029; */
     
 }
 .card-container__info{
@@ -146,3 +151,18 @@ section{
    opacity: .9;
    
 }
+.swal-modal{
+    background-color: #fff;
+
+}
+.swal-title{
+    background-color: #fff;
+    color: rgb(18, 18, 73);
+}
+.swal-footer{
+    background-color: #fff;
+}
+.swal-button{
+    background-color: rgb(127, 66, 217);
+}
+

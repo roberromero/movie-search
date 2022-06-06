@@ -6,6 +6,7 @@ import Nav from './Nav';
 import About from './About';
 import User from './User';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import swal from 'sweetalert';
 
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
@@ -34,11 +35,14 @@ const App = () => {
     }
   //Functions passes to "USER" as props
   const [data, updateData] = useState([]);
-
+ 
   const handleClick = (elem)=> {
     updateData(oldArray=> [...oldArray, elem]);
-    console.log(data);
+    swal({
+      title: "Movie Added!"
+    });
   }
+  
   return (
 
     <BrowserRouter>
