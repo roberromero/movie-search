@@ -16,6 +16,7 @@ const Nav = ({handleSubmit, handleChange}) => {
             <input className="search-input" typeof="text" placeholder="Search..." onChange={handleChange}/>
             <button typeof="submit">Search</button>
         </form>
+        
         <div className='container-icons'>
             <NavLink to="/"> <img src={home} className='nav-home' alt='home icon'/></NavLink>
             <NavLink to='/user'><img src={user} className='nav-user' alt='user icon'/></NavLink>

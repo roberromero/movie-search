@@ -8,27 +8,26 @@
     background-color: rgb(18, 18, 73);
     color: rgb(200, 217, 234);
 }
-
-nav{
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0px 3px 20px #00000029;
+body{
+    min-width: 375px;
 }
+
+/* NAVEGATOR */
+nav{
+    box-shadow:  7px 2px 12px 1px rgb(255, 255, 255);
+    margin-bottom: 25px;
+}
+
 .logo{
     display: flex;
-    padding-left: 10px;
-    font-size: 23px;
+    padding: 10px;
 }
 .logo > img{
-    width: 50px;
+    width: 40px;
 }
-.logo > img:hover{
-    animation: rotate 0.7s ease-in-out both;
-}
+
 form{
-    padding-right: 20px;
+    padding:5px;
 }
 form > button{
     background-color: rgb(127, 66, 217);
@@ -40,26 +39,7 @@ form > button{
     height: 30px;
     font-size: 11px;
 }
-form > button:hover{
-    animation: rotate 0.7s ease-in-out both;
-}
-@keyframes rotate {
-    0% {
-      transform: rotate(4deg) translate3d(0, 0, 0);
-    }
-    25% {
-      transform: rotate(3deg) translate3d(0, 0, 0);
-    }
-    50% {
-      transform: rotate(-3deg) translate3d(0, 0, 0);
-    }
-    75% {
-      transform: rotate(1deg) translate3d(0, 0, 0);
-    }
-    100% {
-      transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-  }
+
     
 .search-input{
     border-radius: 5px;
@@ -71,8 +51,8 @@ form > button:hover{
 }
 .container-icons{
     display: flex;
-    justify-content: space-between;
-    width: 60px;
+    justify-content: flex-end;
+    
     
 }
 .nav-home, .nav-user{
@@ -81,23 +61,47 @@ form > button:hover{
     border-radius: 3px;
     padding: 3px;
 }
-.nav-home:hover, .nav-user:hover{
-    width: 25px;
-    cursor: pointer;
-    filter: opacity(0.4) drop-shadow(0 0 0 rgb(127, 66, 217));
-    animation: rotate 0.7s ease-in-out both;
-    
-}
 
 
+/* MOVIE CARDS */
 section{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
+    display: grid;
     justify-content: center;
-    margin-top: 5px;
+    grid-template-areas: 'one''two''three''four''six''seven''eight''nine''ten';
 }
+
+section:nth-child(1){
+    grid-area: one;
+}
+section:nth-child(2){
+    grid-area: two;
+}
+section:nth-child(3){
+    grid-area: three;
+}
+section:nth-child(4){
+    grid-area: four;
+}
+section:nth-child(5){
+    grid-area: five;
+}
+section:nth-child(6){
+    grid-area: six;
+}
+section:nth-child(7){
+    grid-area: seven;
+}
+section:nth-child(8){
+    grid-area: eight;
+}
+section:nth-child(9){
+    grid-area: nine;
+}
+section:nth-child(10){
+    grid-area: ten;
+}
+
+
 
 .flex{
     display: flex;
@@ -108,12 +112,9 @@ section{
     padding: 8px;
     margin: 10px;
     position: relative;
-    transition-duration: 1s;
+
 }
-.card-container:hover{
-    transform: scale(1.12);
-    cursor: pointer;
-}
+
 .card-container__add{
     position: absolute;
     left: -2px;
@@ -123,14 +124,11 @@ section{
     background-color: rgb(127, 66, 217);
     opacity: .6;
 }
-.card-container__add:hover{
-    background-color: rgb(100, 0, 250);
-    border: 2px solid rgb(255, 255, 255);
-}
+
 
 .card-container__img{
-    width: 150px;
-    height: 250px;
+    width: 180px;
+    height: 290px;
     border-radius: 8px;
     
 }
@@ -140,17 +138,14 @@ section{
     text-align: center;
     margin: 0;
     bottom: 20px;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 1s;
+    opacity: 1;
     background-color: rgb(127, 66, 217);
     font-size: 18px;
     border-radius: 3px;
 }
-.card-container__info:hover{
-   opacity: .9;
-   
-}
+
+
+/* Pop Up when movie is added from https://sweetalert.js.org/guides/*/
 .swal-modal{
     background-color: #fff;
 
@@ -159,10 +154,123 @@ section{
     background-color: #fff;
     color: rgb(18, 18, 73);
 }
+.swal-text{
+    background-color: #fff;
+
+}
 .swal-footer{
     background-color: #fff;
 }
 .swal-button{
     background-color: rgb(127, 66, 217);
 }
+
+
+@media only screen and (min-width: 690px){
+
+     section{
+        grid-template-areas: 'one two'
+                            'three four'
+                            'five six'
+                            'seven eight'
+                            'nine ten';
+    } 
+    nav{
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+       
+    }
+    .logo{
+        font-size: 23px;
+        padding: 0 10px;
+    }
+    .logo > img{
+        width: 50px;
+    }
+    form{
+        padding: 20px;
+    }
+    .container-icons{
+        justify-content: space-between;
+        width: 60px;
+    }
+}
+
+@media only screen and (min-width: 1056px) {
+   
+    form > button:hover{
+        animation: rotate 0.7s ease-in-out both;
+    }
+    .logo > img:hover{
+        animation: rotate 0.7s ease-in-out both;
+    }
+    
+    .nav-home:hover, .nav-user:hover{
+        width: 25px;
+        cursor: pointer;
+        filter: opacity(0.4) drop-shadow(0 0 0 rgb(127, 66, 217));
+        animation: rotate 0.7s ease-in-out both;
+        
+    }
+   
+    
+
+    @keyframes rotate {
+        0% {
+          transform: rotate(4deg) translate3d(0, 0, 0);
+        }
+        25% {
+          transform: rotate(3deg) translate3d(0, 0, 0);
+        }
+        50% {
+          transform: rotate(-3deg) translate3d(0, 0, 0);
+        }
+        75% {
+          transform: rotate(1deg) translate3d(0, 0, 0);
+        }
+        100% {
+          transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+      }
+
+
+    
+      section{
+       
+        grid-template-areas: "one two three four five"
+                            " six seven eight nine ten";
+        
+    }
+    .card-container{
+        transition-duration: 1s;
+    }
+    .card-container:hover{
+        transform: scale(1.12);
+        cursor: pointer;
+    }
+   
+    .card-container__add:hover{
+        background-color: rgb(100, 0, 250);
+        border: 2px solid rgb(255, 255, 255);
+    }
+    .card-container__info{
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 1s;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+    .card-container__info:hover{
+       opacity: .9;
+       
+    }
+
+}
+
+
+
+ 
+
 

@@ -38,8 +38,10 @@ const App = () => {
  
   const handleClick = (elem)=> {
     updateData(oldArray=> [...oldArray, elem]);
+    // Using sweetalert.js.org 
     swal({
-      title: "Movie Added!"
+      title: "Movie Added!",
+      text: "Check your personal profile"
     });
   }
   
