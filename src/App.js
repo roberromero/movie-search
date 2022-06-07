@@ -3,11 +3,11 @@ import { useState } from "react";
 import './App.css';
 import Home from './Home';
 import Nav from './Nav';
-import About from './About';
 import User from './User';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
-
+import Footer from './Footer';
+import ErrorPage from './ErrorPage';
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
 
@@ -51,12 +51,11 @@ const App = () => {
         <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
         <Routes>
           <Route path='/' element={movies.length > 0 ? <Home api={API_URL} movies={movies} handleClick={handleClick}/> : <p></p>}/>
-          <Route path="/about" element= { <About /> } />
           <Route path='/user' element= { <User data={data}/>}/>
+          <Route path='*' element={ <ErrorPage /> }></Route>
         </Routes>
+        <Footer />
     </BrowserRouter>
-    
-    
   );
 }
 

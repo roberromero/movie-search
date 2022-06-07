@@ -145,6 +145,23 @@ section:nth-child(10){
     border-radius: 3px;
 }
 
+footer{
+    width: auto;
+    display: flex;
+    justify-content: center;
+ 
+}
+footer > a {
+    font-size: 18px;
+}
+footer >img {
+    width: 90px;
+    height: 76px;
+}
+footer > a > img{
+    width: 55px;
+    margin: 15px;
+}
 
 /* Pop Up when movie is added from https://sweetalert.js.org/guides/*/
 .swal-modal{
@@ -166,7 +183,11 @@ section:nth-child(10){
     background-color: rgb(127, 66, 217);
 }
 
-
+.title{
+    text-align: center;
+    padding: 25px;
+    font-size: 3em;
+}
 @media only screen and (min-width: 690px){
 
      section{
@@ -282,6 +303,16 @@ section:nth-child(10){
     .card-container__info:hover{
        opacity: .9;
        
+    }
+    footer > a {
+        cursor: pointer;
+        transition-duration: 1s;
+    }
+    footer > a:hover {
+        filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
+        animation: rotate 0.7s ease-in-out both;
+        border-radius: 50%;
+        transform: scale(1.12);
     }
 
 }
