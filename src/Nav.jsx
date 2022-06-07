@@ -10,7 +10,7 @@ const Nav = ({handleSubmit, handleChange, anyMovies, movieCounter}) => {
     
     const handleAnyMovies = ()=> {
         
-        if(anyMovies==false){
+        if(anyMovies===false){
            swal({
             title: "No movies added",
             text: "Please, add some!"

@@ -8,11 +8,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import Footer from './Footer';
 import ErrorPage from './ErrorPage';
+
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
-
 const API_URL = 'http://www.omdbapi.com/?apikey=19fe2539';
-
 
 
 const App = () => {
@@ -36,21 +35,21 @@ const App = () => {
   //Functions passes to "USER" as props
   const [data, updateData] = useState([]);
 
-    const handleClick = (elem)=> {
-    updateData(oldArray=> [...oldArray, elem]);
-    // Using sweetalert.js.org 
-    swal({
-      title: "Movie Added!",
-      text: "Check your personal profile"
-    });
-    setAnyMovies(true);
-    setMovieCounter(movieCounter+1);
-  }
+const handleClick = (elem)=> {
+  updateData(oldArray=> [...oldArray, elem]);
+  // Using sweetalert.js.org 
+  swal({
+    title: "Movie Added!",
+    text: "Check your personal profile"
+  });
+  setAnyMovies(true);
+  setMovieCounter(movieCounter+1);
+}
  //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
- const [anyMovies, setAnyMovies] = useState(false);
+const [anyMovies, setAnyMovies] = useState(false);
 
- //Movies counter
- const [movieCounter, setMovieCounter] = useState(0);
+ //Movies counter, passed to <Nav /> as prop
+const [movieCounter, setMovieCounter] = useState(0);
   
     
   return (
