@@ -64,6 +64,16 @@ form > button{
     border-radius: 3px;
     padding: 3px;
 }
+.circle{
+    border-radius: 50%;
+    background-color: rgb(127, 66, 217);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
 
 
 /* MOVIE CARDS */
@@ -190,6 +200,7 @@ footer > a > img{
     padding: 25px;
     font-size: 3em;
 }
+
 @media only screen and (min-width: 690px){
 
      section{
@@ -218,11 +229,13 @@ footer > a > img{
     }
     .container-icons{
         justify-content: space-between;
-        width: 60px;
     }
     .nav-home, .nav-user {
-        width: 25px;
+        width: 35px;
+        margin-left: 15px;
     }
+    
+        
 }
 
 @media only screen and (min-width: 1056px) {
@@ -233,16 +246,13 @@ footer > a > img{
     .logo > img:hover{
         animation: rotate 0.7s ease-in-out both;
     }
-    
     .nav-home:hover, .nav-user:hover{
-        width: 25px;
+        width: 35px;
         cursor: pointer;
         filter: opacity(0.4) drop-shadow(0 0 0 rgb(127, 66, 217));
         animation: rotate 0.7s ease-in-out both;
         
     }
-   
-    
 
     @keyframes rotate {
         0% {

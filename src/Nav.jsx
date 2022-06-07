@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import swal from 'sweetalert';
 
 
-const Nav = ({handleSubmit, handleChange, anyMovies}) => {
+const Nav = ({handleSubmit, handleChange, anyMovies, movieCounter}) => {
     
     const handleAnyMovies = ()=> {
         
@@ -32,6 +32,7 @@ const Nav = ({handleSubmit, handleChange, anyMovies}) => {
         <div className='container-icons'>
             <NavLink to="/"> <img src={home} className='nav-home' alt='home icon'/></NavLink>
             <NavLink to='/user'><img src={user} onClick={handleAnyMovies}className='nav-user' alt='user icon'/></NavLink>
+            <div className='circle'>{movieCounter}</div>
         </div>
     </nav>
     

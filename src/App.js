@@ -44,19 +44,21 @@ const App = () => {
       text: "Check your personal profile"
     });
     setAnyMovies(true);
+    setMovieCounter(movieCounter+1);
   }
- //EVALUATES "data" object to RETURN boolean value
+ //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
  const [anyMovies, setAnyMovies] = useState(false);
-  
+
+ //Movies counter
+ const [movieCounter, setMovieCounter] = useState(0);
   
     
   return (
 
     <BrowserRouter>
-        <Nav handleSubmit={handleSubmit} handleChange={handleChange} anyMovies={anyMovies}/>
+        <Nav handleSubmit={handleSubmit} handleChange={handleChange} anyMovies={anyMovies} movieCounter={movieCounter}/>
         <Routes>
           <Route path='/' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
-          {/* <Route path='/user' element={<User data={data}/>} /> */}
           <Route 
           path='/user' 
           element={anyMovies ? <User data={data}/> : <Navigate to='/'/>}
