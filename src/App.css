@@ -21,13 +21,16 @@ nav{
 .logo{
     display: flex;
     padding: 10px;
+    justify-content: center;
 }
 .logo > img{
     width: 40px;
 }
 
 form{
+    display: flex;
     padding:5px;
+    justify-content: center;
 }
 form > button{
     background-color: rgb(127, 66, 217);
@@ -51,12 +54,12 @@ form > button{
 }
 .container-icons{
     display: flex;
-    justify-content: flex-end;
-    
+    justify-content: center;
+    padding-top: 15px;
     
 }
 .nav-home, .nav-user{
-    width: 25px;
+    width: 35px;
     cursor: pointer;
     border-radius: 3px;
     padding: 3px;
@@ -102,7 +105,6 @@ section:nth-child(10){
 }
 
 
-
 .flex{
     display: flex;
     flex-wrap: wrap;
@@ -117,30 +119,29 @@ section:nth-child(10){
 
 .card-container__add{
     position: absolute;
-    left: -2px;
-    top: -2px;
-    width: 25px;
-    border-radius: 5px;
+    left: -4px;
+    top: -4px;
+    width: 65px;
+    border-radius: 10px;
     background-color: rgb(127, 66, 217);
     opacity: .6;
 }
 
-
 .card-container__img{
-    width: 180px;
-    height: 290px;
+    width: 340px;
+    height: 547px;
     border-radius: 8px;
     
 }
 .card-container__info{
     position: absolute;
-    width: 150px;
+    width: 340px;
     text-align: center;
     margin: 0;
     bottom: 20px;
     opacity: 1;
     background-color: rgb(127, 66, 217);
-    font-size: 18px;
+    font-size: 2em;
     border-radius: 3px;
 }
 
@@ -196,6 +197,9 @@ section:nth-child(10){
         justify-content: space-between;
         width: 60px;
     }
+    .nav-home, .nav-user {
+        width: 25px;
+    }
 }
 
 @media only screen and (min-width: 1056px) {
@@ -250,12 +254,25 @@ section:nth-child(10){
         transform: scale(1.12);
         cursor: pointer;
     }
-   
+    .card-container__img{
+        width: 180px;
+        height: 290px;
+        border-radius: 8px;
+        
+    }
+    .card-container__add{
+        left: -2px;
+        top: -2px;
+        width: 25px;
+        border-radius: 5px;
+    }
     .card-container__add:hover{
         background-color: rgb(100, 0, 250);
         border: 2px solid rgb(255, 255, 255);
     }
     .card-container__info{
+        width: 180px;
+        font-size: 2em;
         opacity: 0;
         transition-property: opacity;
         transition-duration: 1s;
