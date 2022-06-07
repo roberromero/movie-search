@@ -12,9 +12,9 @@ const Footer = () => {
     }
   return (
     <footer>
-        <a href="https://github.com/roberromero"><img src={github} alt="github icon"/></a>
-        <a href="https://www.linkedin.com/in/roberto-romero-martin-204939230/"><img src={linkedin} alt="linkedin icon"/></a>
-        <img onClick={handlePhone} src={phone} alt="smartphone icon"/>
+        <a className='rot rota' href="https://github.com/roberromero"><img src={github} alt="github icon"/></a>
+        <a className='rot rota' href="https://www.linkedin.com/in/roberto-romero-martin-204939230/"><img src={linkedin} alt="linkedin icon"/></a>
+        <div className='divrota rot rota'><img className='footer-phone' onClick={handlePhone} src={phone} alt="smartphone icon"/></div>
     </footer>
   )
 }

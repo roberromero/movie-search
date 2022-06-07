@@ -4,7 +4,7 @@ import './App.css';
 import Home from './Home';
 import Nav from './Nav';
 import User from './User';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import Footer from './Footer';
 import ErrorPage from './ErrorPage';
@@ -35,23 +35,32 @@ const App = () => {
     }
   //Functions passes to "USER" as props
   const [data, updateData] = useState([]);
- 
-  const handleClick = (elem)=> {
+
+    const handleClick = (elem)=> {
     updateData(oldArray=> [...oldArray, elem]);
     // Using sweetalert.js.org 
     swal({
       title: "Movie Added!",
       text: "Check your personal profile"
     });
+    setAnyMovies(true);
   }
+ //EVALUATES "data" object to RETURN boolean value
+ const [anyMovies, setAnyMovies] = useState(false);
   
+  
+    
   return (
 
     <BrowserRouter>
-        <Nav handleSubmit={handleSubmit} handleChange={handleChange}/>
+        <Nav handleSubmit={handleSubmit} handleChange={handleChange} anyMovies={anyMovies}/>
         <Routes>
-          <Route path='/' element={movies.length > 0 ? <Home api={API_URL} movies={movies} handleClick={handleClick}/> : <p></p>}/>
-          <Route path='/user' element= { <User data={data}/>}/>
+          <Route path='/' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
+          {/* <Route path='/user' element={<User data={data}/>} /> */}
+          <Route 
+          path='/user' 
+          element={anyMovies ? <User data={data}/> : <Navigate to='/'/>}
+           />
           <Route path='*' element={ <ErrorPage /> }></Route>
         </Routes>
         <Footer />

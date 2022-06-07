@@ -6,7 +6,8 @@ const Home = ({ movies, handleClick }) => {
   
 
   return (
-     
+     <>
+     <h2 className='title'>HOME</h2>
     <section>
         {movies.map((elem, index)=> {
      return (
@@ -21,7 +22,7 @@ const Home = ({ movies, handleClick }) => {
             )
         })}
     </section>
-    
+    </>
   )
 }
 

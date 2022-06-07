@@ -149,14 +149,16 @@ footer{
     width: auto;
     display: flex;
     justify-content: center;
- 
+    align-items: center;
 }
-footer > a {
-    font-size: 18px;
+
+.footer-phone {
+    width: 65px;
+    height: 55px;
 }
-footer >img {
-    width: 90px;
-    height: 76px;
+.divrota{
+    padding: 15px 10px;
+    cursor: pointer;
 }
 footer > a > img{
     width: 55px;
@@ -261,8 +263,7 @@ footer > a > img{
       }
 
 
-    
-      section{
+    section{
        
         grid-template-areas: "one two three four five"
                             " six seven eight nine ten";
@@ -304,11 +305,11 @@ footer > a > img{
        opacity: .9;
        
     }
-    footer > a {
+    .rot {
         cursor: pointer;
         transition-duration: 1s;
     }
-    footer > a:hover {
+    .rota:hover {
         filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 255, 255));
         animation: rotate 0.7s ease-in-out both;
         border-radius: 50%;

@@ -3,9 +3,21 @@ import video from "./img/video.png";
 import home from "./img/home.png";
 import user from "./img/user.png";
 import { NavLink } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
-const Nav = ({handleSubmit, handleChange}) => {
+const Nav = ({handleSubmit, handleChange, anyMovies}) => {
+    
+    const handleAnyMovies = ()=> {
+        
+        if(anyMovies==false){
+           swal({
+            title: "No movies added",
+            text: "Please, add some!"
+          });
+        }
+    }
+    
  return(
     <nav>
         <div className="logo">
@@ -19,7 +31,7 @@ const Nav = ({handleSubmit, handleChange}) => {
         
         <div className='container-icons'>
             <NavLink to="/"> <img src={home} className='nav-home' alt='home icon'/></NavLink>
-            <NavLink to='/user'><img src={user} className='nav-user' alt='user icon'/></NavLink>
+            <NavLink to='/user'><img src={user} onClick={handleAnyMovies}className='nav-user' alt='user icon'/></NavLink>
         </div>
     </nav>
     

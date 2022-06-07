@@ -1,18 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
 
 
 const User = ({ data }) => {
-    const navigate = useNavigate();
-    if(data.length == 0){
-      swal({
-        title: "No movies added",
-        text: "Please, add some!"
-      });
-    }
-    // navigate('/as');
-    
+ 
     return (
       <>
         <h2 className='title'>MY MOVIES</h2>
