@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react";
 import './App.css';
 import Home from './Home';
@@ -11,47 +11,52 @@ import ErrorPage from './ErrorPage';
 
 // Here is your key: 19fe2539
 // OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=19fe2539
-const API_URL = 'http://www.omdbapi.com/?apikey=19fe2539';
+const API_URL = 'http://www.omdbapi.com/?apikey=19fe2539&';
 
 
 const App = () => {
-    const [title, setTitle] = useState("");
-    const[ movies, setMovies] = useState([]);
-    //Fetch data from API
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`);
-        const data = await response.json();
-        setMovies(data.Search);
-        
-    }
 
-    //Functions passed to "NAV" as props
-    const handleChange = (e)=>{
-      setTitle(e.target.value);
-    }
-    const handleSubmit = (e)=> {
-      e.preventDefault();
-      searchMovies(title);
-    }
-  //Functions passes to "USER" as props
-  const [data, updateData] = useState([]);
-
-const handleClick = (elem)=> {
-  updateData(oldArray=> [...oldArray, elem]);
-  // Using sweetalert.js.org 
-  swal({
-    title: "Movie Added!",
-    text: "Check your personal profile"
-  });
-  setAnyMovies(true);
-  setMovieCounter(movieCounter+1);
-}
- //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
-const [anyMovies, setAnyMovies] = useState(false);
-
- //Movies counter, passed to <Nav /> as prop
-const [movieCounter, setMovieCounter] = useState(0);
+  const [title, setTitle] = useState("");
+  const[ movies, setMovies] = useState([]);
+  //Fetch data from API
+  const searchMovies = async (title) => {
+          const response = await fetch(`${API_URL}s=${title}`);
+          const data = await response.json();
+          setMovies(data.Search);
+          
+      }     
   
+  // It renders once, at the beggining to create a random search
+  useEffect(()=>{
+    const randomMovies = ["hulk", "superman", "batman", "carlos", "star wars", "x-men"];
+    searchMovies(randomMovies[(Math.floor((Math.random()*6)))]);
+  }, []);
+
+      //Functions passed to "NAV" as props
+  const handleChange = (e)=> setTitle(e.target.value);
+  const handleSubmit = (e)=> {
+        e.preventDefault();
+        searchMovies(title);
+      }
+
+  //Function passes to "USER" as props
+  const [data, updateData] = useState([]);
+  const handleClick = (elem)=> {
+    updateData(oldArray=> [...oldArray, elem]);
+    // Using sweetalert.js.org 
+    swal({
+      title: "Movie Added!",
+      text: "Check your personal profile"
+    });
+    setAnyMovies(true);
+    setMovieCounter(movieCounter+1);
+  }
+  //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
+  const [anyMovies, setAnyMovies] = useState(false);
+
+  //Movies counter, passed to <Nav /> as prop
+  const [movieCounter, setMovieCounter] = useState(0);
+    
     
   return (
 

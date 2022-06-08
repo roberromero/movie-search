@@ -51,7 +51,7 @@ const User = ({ data, updateData }) => {
                         {elem.Title}<br/>
                         {elem.Year}
                       </div>
-                      <p> {elem.Comment} </p>
+                      <p className='card-container__comment'> {elem.Comment} </p>
                     </div>
           })
           }
