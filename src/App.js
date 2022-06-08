@@ -61,7 +61,7 @@ const [movieCounter, setMovieCounter] = useState(0);
           <Route path='/' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
           <Route 
           path='/user' 
-          element={anyMovies ? <User data={data}/> : <Navigate to='/'/>}
+          element={anyMovies ? <User data={data} updateData={updateData}/> : <Navigate to='/'/>}
            />
           <Route path='*' element={ <ErrorPage /> }></Route>
         </Routes>

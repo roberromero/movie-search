@@ -127,10 +127,16 @@ section:nth-child(10){
 
 }
 
-.card-container__add{
+.card-container__add-edit{
     position: absolute;
-    left: -4px;
-    top: -4px;
+    width: 65px;
+    border-radius: 20px;
+    background-color: rgb(127, 66, 217);
+    opacity: .6;
+}
+#remove{
+    position: absolute;
+    right: 8px;
     width: 65px;
     border-radius: 10px;
     background-color: rgb(127, 66, 217);
@@ -186,13 +192,28 @@ footer > a > img{
 }
 .swal-text{
     background-color: #fff;
-
 }
+
 .swal-footer{
     background-color: #fff;
 }
 .swal-button{
     background-color: rgb(127, 66, 217);
+    color: #fff;
+}
+
+.swal-button:hover{
+    background-color: rgb(18, 18, 73) !important;
+}
+.swal-button-container {
+    border-radius: 5px;
+}
+.swal-content{
+    background-color: #fff;
+}
+.swal-content__input{
+    color: rgb(18, 18, 73);
+    font-size: 20px;
 }
 
 .title{
@@ -292,13 +313,21 @@ footer > a > img{
         border-radius: 8px;
         
     }
-    .card-container__add{
-        left: -2px;
-        top: -2px;
+    .card-container__add-edit{
+        /* left: -2px;
+        top: -2px; */
         width: 25px;
         border-radius: 5px;
     }
-    .card-container__add:hover{
+    #remove{
+        width: 25px;
+        border-radius: 5px;
+    }
+    .card-container__add-edit:hover{
+        background-color: rgb(100, 0, 250);
+        border: 2px solid rgb(255, 255, 255);
+    }
+    #remove:hover{
         background-color: rgb(100, 0, 250);
         border: 2px solid rgb(255, 255, 255);
     }
