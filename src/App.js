@@ -43,17 +43,37 @@ const App = () => {
   //For adding a movie to USER (function passes to "USER" as props)
   const [data, updateData] = useState([]);
   const handleClick = (elem)=> {
-    //Tengo que comparar el elem.imdbID recibido por parámetro con los elementos del array de objetos de data:
-          //Si el elem.imdbID coincide con algun ID de los elemento, salta mensaje "That film has already been added"
-          //Si no coincide actualizamos data
-    updateData(oldArray=> [...oldArray, elem]);
-    // Using sweetalert.js.org 
-    swal({
-      title: "Movie Added!",
-      text: "Check your personal profile"
-    });
-    setAnyMovies(true);
-    setMovieCounter(movieCounter+1);
+
+    const addData = () => {
+      updateData(oldArray=> [...oldArray, elem]);
+      // Using sweetalert.js.org 
+      swal({
+        title: "Movie Added!",
+        text: "Check your personal profile"
+      });
+      setAnyMovies(true);
+      setMovieCounter(movieCounter+1);
+     }   
+
+        if(data.length===0){
+          addData();
+          console.log(1);
+        }else{
+          // if(pos.imdbID === elem.imdbID){
+            //   console.log("no añadimos la película xq es similar");
+            //   console.log(2);
+            // }else{
+            //   addData();
+            //   console.log(3);
+            // }
+        }
+          
+            
+        
+        
+        
+   
+      
   }
   //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
   const [anyMovies, setAnyMovies] = useState(false);
@@ -64,7 +84,6 @@ const App = () => {
   //For decreasing "movieCounter"
   const decreaseMovieCounter = () => {
     //EJEMPLO PARA ANALIZAR CON RAFA--------------------------------------------------------------------
-    console.log(movieCounter);
     setMovieCounter(movieCounter-1);
     movieCounter===1 ? setAnyMovies(false) : setAnyMovies(true);
   }
