@@ -4,7 +4,6 @@ import add from "./img/add.png";
 
 const Home = ({ movies, handleClick }) => {
   
-  console.log(movies);
   return (
      <>
      <h2 className='title'>HOME</h2>
