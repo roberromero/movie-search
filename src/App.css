@@ -49,7 +49,7 @@ form > button{
     background-color: white;
     width: 240px;
     height: 30px;
-    color: black;
+    color: rgb(18, 18, 73);
     font-size: 14px;
 }
 .container-icons{
@@ -134,10 +134,16 @@ section:nth-child(10){
     background-color: rgb(127, 66, 217);
     opacity: .6;
 }
+#edit{
+    margin-left: 5px;
+    margin-bottom: 9px;
+    bottom: 0;
+    width: 28px;
+}
 #remove{
     position: absolute;
     right: 8px;
-    width: 65px;
+    width: 45px;
     border-radius: 10px;
     background-color: rgb(127, 66, 217);
     opacity: .6;
@@ -157,17 +163,27 @@ section:nth-child(10){
     bottom: 20px;
     opacity: 1;
     background-color: rgb(127, 66, 217);
-    font-size: 3em;
+    font-size: 2em;
     border-radius: 3px;
+}
+.card-container__info-user{
+    width: 340px;
+    text-align: center;
+    margin: 0;
+    background-color: rgb(127, 66, 217);
+    font-size: 2em;
+    border-radius: 3px;
+    opacity: .9;
 }
 
 .card-container__comment{
-    width: 180px;
+    width: 340px;
     text-align: center;
-    background-color: rgb(127, 66, 217);
-    color: #fff;
-    border-radius: 10px;
+    background-color: #fff;
+    color: rgb(18, 18, 73);
+    border-radius: 2px;
     padding: 15px 10px;
+    font-size: 1.5em;
 }
 footer{
     width: auto;
@@ -348,6 +364,16 @@ footer > a > img{
         font-size: 18px;
         border-radius: 3px;
     }
+
+    .card-container__info-user{
+        width: 180px;
+        font-size: 2em;
+        transition-property: opacity;
+        transition-duration: 1s;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+
     .card-container__info:hover{
        opacity: .9;
        
