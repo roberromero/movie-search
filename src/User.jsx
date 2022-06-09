@@ -3,10 +3,11 @@ import bin from './img/bin.png';
 import edit from './img/edit.png';
 import swal from 'sweetalert';
 
-const User = ({ data, updateData }) => {
+const User = ({ data, updateData, decreaseMovieCounter }) => {
 
-  const [ value, setValue ] = useState("");
-
+  
+  //For editing comments
+    const [ value, setValue ] = useState("");
     const handleEdit = (id) => {
       swal({
         title: "Please, leave your comment:",
@@ -22,6 +23,7 @@ const User = ({ data, updateData }) => {
       });
         
     }
+  //For Deleting films
     const handleDelete = (id) => {
         
       swal({
@@ -32,6 +34,7 @@ const User = ({ data, updateData }) => {
         if (willDelete) {
           swal("The movie has been deleted!", {
           });
+          decreaseMovieCounter();
           updateData( data.filter(elem=> elem.imdbID !== id) );
         }
       });
