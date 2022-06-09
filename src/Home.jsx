@@ -1,12 +1,13 @@
 import React from "react";
 import add from "./img/add.png";
-
+import arrow from "./img/arrow.png";
 
 const Home = ({ movies, handleClick }) => {
   
   return (
      <>
      <h2 className='title'>HOME</h2>
+     <img className='arrow' src={arrow} alt='arrow button' />
     <section>
         {movies.map((elem, index)=> {
      return (

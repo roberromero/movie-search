@@ -16,8 +16,8 @@ body{
 nav{
     box-shadow:  7px 2px 12px 1px rgb(255, 255, 255);
     margin-bottom: 25px;
-    position: relative;	/**/
-    padding: 10px; /**/
+    position: relative;
+    padding: 10px;
 }
 #menu{
     width: 35px;
@@ -26,12 +26,8 @@ nav{
 .logo{
     float: right;
     margin-left: 5px;
-    /* display: flex;
-    padding: 10px;
-    justify-content: center; */
 }
 .logo > img{
-    /* width: 40px; */
     width: 30px;
     border-radius: 10px;
 }
@@ -43,9 +39,9 @@ form{
     bottom: 0;
     left: 0;
     margin: auto;
-    display: flex;/**/
-    padding: 5px;/**/
-    justify-content: center;/**/
+    display: flex;
+    padding: 5px;
+    justify-content: center;
     
 
 }
@@ -70,9 +66,9 @@ form > button{
     font-size: 14px;
 }
 .container-icons{
-    /* display: flex; */
-    justify-content: center;/**/
-    padding-top: 15px;/**/
+    
+    justify-content: center;
+    padding-top: 15px;
     display: none;
     background-color: rgb(127, 66, 217);
     opacity: .98;
@@ -87,22 +83,21 @@ form > button{
     background-color: rgb(127, 66, 217);
 }
 .nav-home, .nav-user{
-    width: 35px;/**/
-    cursor: pointer;/**/
-    border-radius: 3px;/**/
-    padding: 3px;/**/
+    width: 35px;
+    border-radius: 3px;
+    padding: 2px;
     background-color: rgb(127, 66, 217);
     margin-left: 20px;
 }
 .circle{
-    border-radius: 50%;/**/
+    border-radius: 50%;
     background-color: rgb(18, 18, 73);
-    width: 25px;/**/
-    height: 25px;/**/
-    display: flex;/**/
-    align-items: center;/**/
-    justify-content: center;/**/
-    font-size: 18px;/**/
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
 
 
@@ -144,6 +139,17 @@ section:nth-child(10){
     grid-area: ten;
 }
 
+.arrow{
+    position: fixed;
+    z-index: 1;
+    background-color: transparent;
+    right: 0;
+    bottom: 0;
+    padding-right: 7px;
+    padding-bottom: 25px;
+    opacity: .6;
+    cursor: pointer;
+}
 
 .flex{
     display: flex;
@@ -163,12 +169,14 @@ section:nth-child(10){
     border-radius: 20px;
     background-color: rgb(127, 66, 217);
     opacity: .6;
+    
 }
 #edit{
     margin-left: 5px;
     margin-bottom: 9px;
     bottom: 0;
     width: 28px;
+    
 }
 #remove{
     position: absolute;
@@ -177,6 +185,7 @@ section:nth-child(10){
     border-radius: 10px;
     background-color: rgb(127, 66, 217);
     opacity: .6;
+    
 }
 
 .card-container__img{
@@ -287,31 +296,51 @@ footer > a > img{
                             'nine ten';
     } 
     nav{
-        padding: 10px;
         display: flex;
         justify-content: space-around;
         align-items: center;
        
     }
+    /*------------------------------------------------------*/
+    #menu{
+        display: none;
+    }
     .logo{
         font-size: 23px;
         padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        float: none;
     }
     .logo > img{
         width: 50px;
     }
     form{
         padding: 20px;
+        position: revert;
     }
     .container-icons{
+        display: flex;
         justify-content: space-between;
+        width: auto;
+        position: revert;
+        background-color: transparent;
+        height: auto;
+    }
+    .container-icons >a {
+        background-color: transparent;
     }
     .nav-home, .nav-user {
-        width: 35px;
         margin-left: 15px;
+        background-color: transparent;
+        cursor: pointer;
     }
-    
-        
+    .circle{
+        background-color:rgb(127, 66, 217);
+    }
+    .title{
+        padding: 25px;
+    }    
 }
 
 @media only screen and (min-width: 1056px) {
@@ -360,7 +389,6 @@ footer > a > img{
     }
     .card-container:hover{
         transform: scale(1.12);
-        cursor: pointer;
     }
     .card-container__img{
         width: 180px;
@@ -373,10 +401,13 @@ footer > a > img{
         top: -2px; */
         width: 25px;
         border-radius: 5px;
+        cursor: pointer;
     }
     #remove{
         width: 25px;
         border-radius: 5px;
+        right: revert;
+        cursor: pointer;
     }
     .card-container__add-edit:hover{
         background-color: rgb(100, 0, 250);
@@ -408,6 +439,16 @@ footer > a > img{
     .card-container__info:hover{
        opacity: .9;
        
+    }
+    .card-container__comment{
+        width: 180px;
+        padding: 25px 10px;
+        font-size: 1em;
+    }
+    #edit{
+        width: 28px;
+        bottom: revert;
+        margin: 2px;
     }
     .rot {
         cursor: pointer;

@@ -44,14 +44,16 @@ const User = ({ data, updateData }) => {
         <section>
           {data.map(elem=>{
             return  <div className="card-container" key={elem.imdbID}>
-                      <img src={edit} id='edit' className='card-container__add-edit' onClick={()=>handleEdit(elem.imdbID)} alt='edit comment button'/>
                       <img src={bin} id='remove' onClick={()=>handleDelete(elem.imdbID)} alt='delete button'/>
                       <img className="card-container__img" src={elem.Poster} alt={`Cover of the film ${elem.Title}`} />
                       <div className='card-container__info-user'>
                         {elem.Title}<br/>
                         {elem.Year}
                       </div>
-                      <p className='card-container__comment'> {elem.Comment} </p>
+                      <div>
+                        <img src={edit} id='edit' className='card-container__add-edit' onClick={()=>handleEdit(elem.imdbID)} alt='edit comment button'/>
+                        <p className='card-container__comment'> {elem.Comment} </p>
+                      </div>
                     </div>
           })
           }
