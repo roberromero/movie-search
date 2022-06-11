@@ -40,26 +40,31 @@ const App = () => {
   //For setting the title of the movie typed by user (Functions passed to "NAV" as props)
   const handleChange = (e)=> setTitle(e.target.value);
 
-  //For adding a movie to USER (function passes to "USER" as props)
+  
   const [data, updateData] = useState([]);
 
-  // const [similar, setSimilar] = useState(false);
+//this const stores ids of the chosen movies
   const [ids, setIds] = useState([]);
+//This function compares if the movie chosen is similar to any 
+//of the ones chosen previously and stored in "ids".
+  const isSimilar = (id) => {
+    let res = false;
+    if(ids.length !== 0){
+      for (let i = 0; i < ids.length; i++) {
+        if(ids[i]=== id){
+          res = true;
+        }      
+      }
+    }
+    return res;
+  }
+  
+  //For adding a movie to USER (function passes to "USER" as props)
   const handleClick = (elem)=> {
     setIds(oldArray=> [...oldArray, elem.imdbID]);
-    const isSimilar = (id) => {
-      let res = false;
-      if(ids.length != 0){
-        for (let i = 0; i < ids.length; i++) {
-          if(ids[i]=== id){
-            res = true;
-          }      
-        }
-      }
-      return res;
-    }
-    // console.log(isSimilar(elem.imdbID));
-    if(!isSimilar(elem.imdbID)){
+    
+    const isSim = isSimilar(elem.imdbID);
+    if(!isSim){
       updateData(oldArray=> [...oldArray, elem]);
       // Using sweetalert.js.org 
       swal({
@@ -69,7 +74,10 @@ const App = () => {
       setAnyMovies(true);
       setMovieCounter(movieCounter+1);
     }else{
-      console.log("No añadido");
+      swal({
+        title: "NO Added!",
+        text: "The same movies cannot be added"
+      });
     }
     
      }   
