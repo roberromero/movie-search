@@ -7,7 +7,7 @@ const User = ({ data, updateData, decreaseMovieCounter }) => {
 
   
   //For editing comments
-    const [ value, setValue ] = useState("");
+    const [ value, setValue ] = useState();
     const handleEdit = (id) => {
       swal({
         title: "Please, leave your comment:",
