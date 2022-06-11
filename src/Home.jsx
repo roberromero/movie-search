@@ -4,10 +4,22 @@ import arrow from "./img/arrow.png";
 
 const Home = ({ movies, handleClick }) => {
   
+  //Function to scroll up after pressing arrow button 
+  const handleArrow = ()=> {
+    let ini= window.pageYOffset;
+    setInterval(()=>{
+      if(ini>0){
+        window.scrollTo(0, ini);
+      ini= ini-10;
+      }
+  })
+    
+  }
+  
   return (
      <>
      <h2 className='title'>HOME</h2>
-     <img className='arrow' src={arrow} alt='arrow button' />
+     <img className='arrow' src={arrow} onClick={handleArrow} alt='arrow button' />
     <section>
         {movies.map((elem, index)=> {
      return (

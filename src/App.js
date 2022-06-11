@@ -42,9 +42,24 @@ const App = () => {
 
   //For adding a movie to USER (function passes to "USER" as props)
   const [data, updateData] = useState([]);
-  const handleClick = (elem)=> {
 
-    const addData = () => {
+  // const [similar, setSimilar] = useState(false);
+  const [ids, setIds] = useState([]);
+  const handleClick = (elem)=> {
+    setIds(oldArray=> [...oldArray, elem.imdbID]);
+    const isSimilar = (id) => {
+      let res = false;
+      if(ids.length != 0){
+        for (let i = 0; i < ids.length; i++) {
+          if(ids[i]=== id){
+            res = true;
+          }      
+        }
+      }
+      return res;
+    }
+    // console.log(isSimilar(elem.imdbID));
+    if(!isSimilar(elem.imdbID)){
       updateData(oldArray=> [...oldArray, elem]);
       // Using sweetalert.js.org 
       swal({
@@ -53,28 +68,12 @@ const App = () => {
       });
       setAnyMovies(true);
       setMovieCounter(movieCounter+1);
+    }else{
+      console.log("No añadido");
+    }
+    
      }   
-
-        if(data.length===0){
-          addData();
-          console.log(1);
-        }else{
-          // if(pos.imdbID === elem.imdbID){
-            //   console.log("no añadimos la película xq es similar");
-            //   console.log(2);
-            // }else{
-            //   addData();
-            //   console.log(3);
-            // }
-        }
-          
-            
-        
-        
-        
-   
-      
-  }
+ 
   //EVALUATES "data" object to RETURN boolean value, passed to <Nav /> as prop
   const [anyMovies, setAnyMovies] = useState(false);
 
