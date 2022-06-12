@@ -46,7 +46,7 @@ const App = () => {
 //this const stores ids of the chosen movies
   const [ids, setIds] = useState([]);
 //This function compares if the movie chosen is similar to any 
-//of the ones chosen previously and stored in "ids".
+//of the ones chosen previously and stored in "ids". If similar do not allow to store it in user
   const isSimilar = (id) => {
     let res = false;
     if(ids.length !== 0){

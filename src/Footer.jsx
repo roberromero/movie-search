@@ -4,6 +4,7 @@ import linkedin from './img/linkedin.png';
 import phone from './img/phone-call.png';
 import swal from 'sweetalert';
 const Footer = () => {
+  //This function shows a pop-up with my number
     const handlePhone = () => {
         swal({
             title: "+447867060691",

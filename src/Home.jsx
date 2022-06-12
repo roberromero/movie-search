@@ -4,15 +4,15 @@ import arrow from "./img/arrow.png";
 
 const Home = ({ movies, handleClick }) => {
   
-  //Function to scroll up after pressing arrow button 
+  //Function to scroll up automatically after pressing arrow button 
   const handleArrow = ()=> {
     let ini= window.pageYOffset;
     setInterval(()=>{
       if(ini>0){
         window.scrollTo(0, ini);
-      ini= ini-10;
+      ini= ini-40;
       }
-  })
+  }, 10)
     
   }
   

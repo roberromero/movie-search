@@ -20,6 +20,7 @@ const Nav = ({handleSubmit, handleChange, anyMovies, movieCounter}) => {
     }
     //When using "useRef" hook a prop "ref" and the key "refMenu" need to be added to the chosen tag
     const refDropDown = useRef();
+    //This function drop down the menu or contract
     const handleMenu = () => {
         refDropDown.current.style.display === "none" ? refDropDown.current.style.display= "flex" 
         : refDropDown.current.style.display= "none";
