@@ -16,8 +16,10 @@ body{
 nav{
     box-shadow:  7px 2px 12px 1px rgb(255, 255, 255);
     margin-bottom: 25px;
-    position: relative;
+    position: fixed;
     padding: 10px;
+    width: 100%;
+    z-index: 5;
 }
 #menu{
     width: 35px;
@@ -42,7 +44,7 @@ form{
     display: flex;
     padding: 5px;
     justify-content: center;
-    
+    background-color: transparent;
 
 }
 form > button{
@@ -283,7 +285,7 @@ footer > a > img{
     text-align: center;
     padding: 25px;
     font-size: 3em;
-    padding: 95px 0 25px 0;
+    padding: 180px 0 25px 0;
 }
 
 @media only screen and (min-width: 690px){
@@ -340,6 +342,8 @@ footer > a > img{
     }
     .title{
         padding: 25px;
+        position: relative;
+        padding: 140px 0 40px 0;
     }    
    
 }
@@ -359,7 +363,7 @@ footer > a > img{
         animation: rotate 0.7s ease-in-out both;
         
     }
-
+   
     @keyframes rotate {
         0% {
           transform: rotate(4deg) translate3d(0, 0, 0);
