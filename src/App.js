@@ -76,7 +76,7 @@ const App = () => {
     }else{
       swal({
         title: "NO Added!",
-        text: "The same movie cannot be added"
+        text: "The same movies cannot be added"
       });
     }
     
