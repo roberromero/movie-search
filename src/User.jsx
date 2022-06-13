@@ -34,8 +34,8 @@ const User = ({ data, updateData, decreaseMovieCounter }) => {
         if (willDelete) {
           swal("The movie has been deleted!", {
           });
-          decreaseMovieCounter();
           updateData( data.filter(elem=> elem.imdbID !== id) );
+          decreaseMovieCounter();
         }
       });
   }

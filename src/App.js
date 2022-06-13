@@ -76,7 +76,7 @@ const App = () => {
     }else{
       swal({
         title: "NO Added!",
-        text: "The same movies cannot be added"
+        text: "The same movie cannot be added"
       });
     }
     
@@ -90,8 +90,9 @@ const App = () => {
    
   //For decreasing "movieCounter"
   const decreaseMovieCounter = () => {
-    //EJEMPLO PARA ANALIZAR CON RAFA--------------------------------------------------------------------
+    
     setMovieCounter(movieCounter-1);
+    console.log(movieCounter);
     movieCounter===1 ? setAnyMovies(false) : setAnyMovies(true);
   }
   
