@@ -107,7 +107,7 @@ const App = () => {
           path='/user' 
           element={anyMovies ? <User data={data} updateData={updateData} decreaseMovieCounter={decreaseMovieCounter}/> : <Navigate to='/home'/>}
            />
-          <Route path='*' element={ <ErrorPage /> }></Route>
+          <Route path='*' element={ <Home /> }></Route>
         </Routes>
         <Footer />
     </BrowserRouter>
