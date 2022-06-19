@@ -8,7 +8,7 @@ const Footer = () => {
     const handlePhone = () => {
         swal({
             title: "+447867060691",
-            text: "Hurrry Up!"
+            text: "Hurry Up!"
           });
     }
   return (
