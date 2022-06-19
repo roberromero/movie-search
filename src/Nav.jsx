@@ -39,7 +39,7 @@ const Nav = ({handleSubmit, handleChange, anyMovies, movieCounter}) => {
         </form>
         
         <div ref={refDropDown} className='container-icons'>
-            <NavLink to="/"> <img src={home} className='nav-home' alt='home icon'/></NavLink>
+            <NavLink to="movie-search"> <img src={home} className='nav-home' alt='home icon'/></NavLink>
             <NavLink to='/user'><img src={user} onClick={handleAnyMovies}className='nav-user' alt='user icon'/></NavLink>
             <div className='circle'>{movieCounter}</div>
         </div>
