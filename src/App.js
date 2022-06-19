@@ -104,7 +104,7 @@ const App = () => {
         <Routes>
           <Route path='movie-search' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
           <Route 
-          path='user' 
+          path='/user' 
           element={anyMovies ? <User data={data} updateData={updateData} decreaseMovieCounter={decreaseMovieCounter}/> : <Navigate to='movie-search'/>}
            />
           <Route path='*' element={ <ErrorPage /> }></Route>
