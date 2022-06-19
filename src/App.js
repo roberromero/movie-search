@@ -102,10 +102,10 @@ const App = () => {
     <BrowserRouter>
         <Nav handleSubmit={handleSubmit} handleChange={handleChange} anyMovies={anyMovies} movieCounter={movieCounter}/>
         <Routes>
-          <Route path='/home' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
+          <Route path='/' element={movies && <Home api={API_URL} movies={movies} handleClick={handleClick}/>}/>
           <Route 
           path='/user' 
-          element={anyMovies ? <User data={data} updateData={updateData} decreaseMovieCounter={decreaseMovieCounter}/> : <Navigate to='/home'/>}
+          element={anyMovies ? <User data={data} updateData={updateData} decreaseMovieCounter={decreaseMovieCounter}/> : <Navigate to='/'/>}
            />
           <Route path='*' element={ <Home /> }></Route>
         </Routes>
